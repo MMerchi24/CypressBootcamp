@@ -5,7 +5,7 @@
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "cy:smoke": "cypress run --env tags=@smoke",
+        "cy:smoke": "cypress run --env tags=@smoke --spec '**/*.feature'",
         "cy:regression": "cypress run --env tags=@regression"
     },
     "keywords": [],
