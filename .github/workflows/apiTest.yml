@@ -1,0 +1,19 @@
+name: Cypress API Test
+on:
+  workflow_dispatch:
+jobs:
+  cypress-login-test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out repository
+      uses: actions/checkout@v2
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '20.12.2'
+    - name: Install dependencies
+      run: npm install
+    - name: Run Cypress api test
+      run: npm run cy:apiTest
+      env:
+         CI: true

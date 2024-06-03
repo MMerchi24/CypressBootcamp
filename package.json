@@ -6,7 +6,8 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "cy:smoke": "cypress run --env tags=@smoke --spec '**/*.feature'",
-        "cy:regression": "cypress run --env tags=@regression"
+        "cy:regression": "cypress run --env tags=@regression --spec '**/*.feature'",
+        "cy:apiTest": "cypress run --spec '**/*.js'"
     },
     "keywords": [],
     "author": "",
