@@ -22,7 +22,7 @@ export class ProductsPage {
         cy.get(".product_sort_container").select("za");
         //cy.get(selector).should('have.value', textOption2);
 
-        /*        cy.get(selector).should('exist').and('be.visible').and('contain', text);
+        /*      cy.get(selector).should('exist').and('be.visible').and('contain', text);
                 cy.get(selector).select();
                 cy.get(selector).should('have.value', textOption2);
                 cy.contains(descriptionProduct).and('be.visible'); */
