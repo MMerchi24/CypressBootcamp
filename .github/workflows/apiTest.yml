@@ -2,7 +2,7 @@ name: Cypress API Test
 on:
   workflow_dispatch:
 jobs:
-  cypress-login-test:
+  cypress-api-test:
     runs-on: ubuntu-latest
     steps:
     - name: Check out repository
@@ -15,5 +15,12 @@ jobs:
       run: npm install
     - name: Run Cypress api test
       run: npm run cy:apiTest
+    - name: Upload report artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: mochawesome-report
+        path: cypress/reports/html/index.html
+        retention-days: 30
+        if-no-files-found: warn
       env:
-         CI: true
+        CI: true
