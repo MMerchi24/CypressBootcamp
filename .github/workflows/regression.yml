@@ -1,0 +1,21 @@
+name: Cypress Regression Tests
+on:
+  schedule:
+    - cron: "0 22 * * *"
+  workflow_dispatch:
+jobs:
+  cypress-regression:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out repository
+      uses: actions/checkout@v2
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '20.12.2'
+    - name: Install dependencies
+      run: npm install
+    - name: Run Cypress regression tests
+      run: npm run cy:regression
+      env:
+        CI: true
